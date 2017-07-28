@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-var TableHeader = require('./TableHeader')
+var Table = require('./Table')
 
 class App extends Component {
   render() {
@@ -13,7 +12,7 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-          <TableHeader />
+          <Table />
         </div>
       </div>
     );
