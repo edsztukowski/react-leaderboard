@@ -1,8 +1,6 @@
 var axios = require('axios')
 
 
-
-
 module.exports = {
   callMonth:function() {
     return axios.get("https://fcctop100.herokuapp.com/api/fccusers/top/recent")
@@ -13,6 +11,10 @@ module.exports = {
   },
 
   callAll: function() {
+    return axios.get("https://fcctop100.herokuapp.com/api/fccusers/top/alltime")
+    .then(function(user) {
+      return user.data;
+    });
 
   }
 }
