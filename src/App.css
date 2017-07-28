@@ -1,0 +1,10 @@
+.table-header {
+  background: #333;
+  color: #fff;
+  margin-top: 2em;
+}
+
+.table-header h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
