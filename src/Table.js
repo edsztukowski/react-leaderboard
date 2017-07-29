@@ -1,5 +1,7 @@
 var React = require('react');
 var api = require('./utils/api');
+var CamperView = require('./CamperView');
+var PropTypes = require("prop-types");
 
 function TableHeader(props) {
   return(
@@ -16,23 +18,20 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableData: ''
+      tableData: []
     }
     this.updateAll = this.updateAll.bind(this);
     this.updateRecent = this.updateRecent.bind(this);
   }
 
   componentDidMount() {
-    api.callMonth()
-    .then(function(response) {
-      console.log(response)
-    })
+    this.updateRecent()
   }
 
   updateRecent() {
     this.setState(function() {
       return {
-        tableData: ''
+        tableData: []
       }
     })
     api.callMonth()
@@ -48,7 +47,7 @@ class Table extends React.Component {
     updateAll() {
       this.setState(function() {
         return {
-          tableData: ''
+          tableData: []
         }
       })
       api.callAll()
@@ -66,9 +65,14 @@ class Table extends React.Component {
       <div className="table-header col-xs-12">
         <h2>Leaderboard</h2>
         <TableHeader getMonth={this.updateRecent} getAll={this.updateAll}/>
+        <CamperView data={this.state.tableData} />
       </div>
     )
   }
+}
+
+CamperView.propTypes = {
+  data: PropTypes.array
 }
 
 module.exports = Table
