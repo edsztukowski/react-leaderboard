@@ -5,11 +5,11 @@ var PropTypes = require("prop-types");
 
 function TableHeader(props) {
   return(
-    <div className="table-cells col-xs-12">
-      <div className="col-xs-1">#</div>
-      <div className="col-xs-5">Camper Name</div>
-      <div className="col-xs-3" onClick={props.getMonth}>Points in last 30 days</div>
-      <div className="col-xs-3" onClick={props.getAll}>All Time Points</div>
+    <div className="table-header row">
+      <div className="col-xs-1 rank">#</div>
+      <div className="col-xs-5 name">Camper Name</div>
+      <div className="col-xs-3 recent-btn" onClick={props.getMonth}>Points in last 30 days</div>
+      <div className="col-xs-3 alltime-btn" onClick={props.getAll}>All Time Points</div>
     </div>
   )
 }
@@ -62,8 +62,7 @@ class Table extends React.Component {
 
   render() {
     return (
-      <div className="table-header col-xs-12">
-        <h2>Leaderboard</h2>
+      <div className="row">
         <TableHeader getMonth={this.updateRecent} getAll={this.updateAll}/>
         <CamperView data={this.state.tableData} />
       </div>

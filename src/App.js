@@ -11,7 +11,7 @@ class App extends Component {
             <h1>Freecodecamp Leaderboard</h1>
           </div>
         </div>
-        <div className="row">
+        <div>
           <Table />
         </div>
       </div>
