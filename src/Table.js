@@ -8,8 +8,8 @@ function TableHeader(props) {
     <div className="table-header row">
       <div className="col-xs-1 rank">#</div>
       <div className="col-xs-5 name">Camper Name</div>
-      <div className="col-xs-3" onClick={props.getMonth}>Points in last 30 days</div>
-      <div className="col-xs-3" onClick={props.getAll}>All Time Points</div>
+      <div className="col-xs-3 recent-btn" onClick={props.getMonth}>Points in last 30 days</div>
+      <div className="col-xs-3 alltime-btn" onClick={props.getAll}>All Time Points</div>
     </div>
   )
 }
