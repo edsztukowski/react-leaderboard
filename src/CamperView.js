@@ -9,7 +9,7 @@ function CamperView(props) {
     <div>
     {camperArr.map(function(curr, index) {
       return (
-        <div className="row">
+        <div className="camper-row">
           <div className="col-xs-1" key={index + 1}>{index + 1}</div>
           <div className="col-xs-5" key={curr.username}>{curr.username}</div>
           <div className="col-xs-3" key={curr.recent}>{curr.recent}</div>
