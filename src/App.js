@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-var Table = require('./Table')
+import octocat from './octocat.png';
+var Table = require('./Table');
+
 
 class App extends Component {
   render() {
@@ -13,6 +15,13 @@ class App extends Component {
         </div>
         <div>
           <Table />
+        </div>
+        <div className="footer">
+          <h4>Built with React by Ed Sztukowski | 2017</h4>
+          <div>
+            <a href="https://github.com/edsztukowski/react-leaderboard"><img src={octocat}></img></a>
+
+            </div>
         </div>
       </div>
     );
